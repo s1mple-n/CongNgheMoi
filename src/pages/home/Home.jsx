@@ -1,12 +1,58 @@
+import { faMessage,faUser } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Logo from "../images/avt.jpg";
+import React,{ useState } from "react";
+import "./Home.css";
+import ChatContainer from "./ChatContainer";
+import PhoneBookContainer from "./PhoneBookContainer";
 
-import Sidebar from "./Sidebar";
+function Home() {
+  const [toggleState, setToggleState] = useState(1);
 
-const Home = () => {
-	return (
-		<div style={{width:"100vw", height: '100vh'}}>
-			<Sidebar />
-		</div>
-	);
-};
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+  return (
+    <div className="home_container">
+      <div className="sidebarr">
+        <img className="home_avt" src={Logo} alt="" />
+        <ul className="tab-bloc">
+          <li>
+            <button
+              className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(1)}
+              style={{ width: "84%", height: "50px" }}
+            >
+              {" "}
+              <FontAwesomeIcon icon={faMessage} />{" "}
+            </button>
+          </li>
+          <li>
+            <button
+              style={{ width: "84%", height: "50px" }}
+              className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+              onClick={() => toggleTab(2)}
+            >
+              {" "}
+              <FontAwesomeIcon icon={faUser} />
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div className="tab-contents" style={{ width: "95%" }}>
+        <div
+          className={toggleState === 1 ? "content  active-content" : "content"}
+        >
+          <ChatContainer />
+        </div>
+        <div
+          className={toggleState === 2 ? "content  active-content" : "content"}
+        >
+          <PhoneBookContainer />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Home;
