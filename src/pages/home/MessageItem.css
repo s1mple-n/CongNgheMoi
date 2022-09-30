@@ -1,0 +1,6 @@
+.msItems:hover{
+    background-color: lightgray;
+}
+.msItems:active{
+    background-color: #e5efff;
+}
