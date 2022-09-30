@@ -1,9 +1,9 @@
 import "./Chatbox.css"
-import {  faImage, faMessage, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
-import { faPhone, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faImage, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import {  faPhone, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-
+import { Icon } from '@iconify/react';
 function Chatbox(props){
     const [formIsValid, setFormIsValid] = useState(false);
     const [enterMessage, setEnterMessage] = useState();
@@ -24,12 +24,12 @@ function Chatbox(props){
                     <FontAwesomeIcon icon={faVideo} style={{paddingLeft:'20px',marginRight:'20px'}}/>
                 </div>
             </div>
-            <div className="chat-box" style={{width:'100%',height:'80vh',backgroundColor:'lightgrey'}}>
+            <div className="chat-box" style={{width:'100%',height:'82vh',backgroundColor:'lightgrey'}}>
                 
             </div>
-            <div className="chat-bottom" style={{width:'100%',height:'10vh',display: 'flex', flexDirection: 'row',}}>
+            <div className="chat-bottom" style={{width:'100%',height:'8vh',display: 'flex', flexDirection: 'row',}}>
                 <form>
-                    <button style={{border:"none",paddingLeft:"10px"}}><FontAwesomeIcon icon={faMessage}/></button>
+                    <button style={{border:"none",paddingLeft:"10px"}}><Icon icon="fluent:sticker-add-20-regular" /></button>
                     <button style={{border:"none",paddingLeft:"10px"}}><FontAwesomeIcon icon={faImage}/></button>
                     <textarea className="ChatBox_input" placeholder="Nhập tin nhắn" value={enterMessage} onChange={messageChangeHandle} style={{width:"980px",marginLeft:"10px",border:"0",WebkitAppearance:"none",resize:"none"}} />
                     <button disabled={!formIsValid}><FontAwesomeIcon icon={faPaperPlane} style={{paddingLeft:"10px"}} type="submit"/></button>
