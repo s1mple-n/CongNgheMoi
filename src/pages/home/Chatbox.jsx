@@ -13,26 +13,26 @@ function Chatbox(props){
         
     }
     return (
-        <div style={{width: '100%',height: '100vh', display: 'flex', flexDirection: 'column'}}>
-            <div className="Chat_top" style={{height:'10%', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <div className="Chat_top_left" style={{display: 'flex',flexDirection: 'row', alignItems: 'center',flexGrow:"8"}}>
-                    <img src="../images/avt.jpg" alt="" style={{width:'50px',borderRadius:'50%',padding:"1%"}}/>
+        <div className="chatbox_container">
+            <div className="chatbox_top">
+                <div className="chatbox_top_left" >
+                    <img className="chatbox_top_left_avt" src="../images/avt.jpg" alt=""/>
                     <h3>Nguyen van A</h3>
                 </div>
-                <div className="Chat_top_right">
+                <div className="chatbox_top_right">
                     <FontAwesomeIcon icon={faPhone} />  
-                    <FontAwesomeIcon icon={faVideo} style={{paddingLeft:'20px',marginRight:'20px'}}/>
+                    <FontAwesomeIcon className="chatbox_top_right_favideo" icon={faVideo}/>
                 </div>
             </div>
-            <div className="chat-box" style={{width:'100%',height:'82vh',backgroundColor:'lightgrey'}}>
+            <div className="chatbox_session">
                 
             </div>
-            <div className="chat-bottom" style={{width:'100%',height:'8vh',display: 'flex', flexDirection: 'row',}}>
+            <div className="chatbox-bottom">
                 <form>
-                    <button style={{border:"none",paddingLeft:"10px"}}><Icon icon="fluent:sticker-add-20-regular" /></button>
-                    <button style={{border:"none",paddingLeft:"10px"}}><FontAwesomeIcon icon={faImage}/></button>
-                    <textarea className="ChatBox_input" placeholder="Nhập tin nhắn" value={enterMessage} onChange={messageChangeHandle} style={{width:"980px",marginLeft:"10px",border:"0",WebkitAppearance:"none",resize:"none"}} />
-                    <button disabled={!formIsValid}><FontAwesomeIcon icon={faPaperPlane} style={{paddingLeft:"10px"}} type="submit"/></button>
+                    <button><Icon icon="fluent:sticker-add-20-regular" /></button>
+                    <button><FontAwesomeIcon icon={faImage}/></button>
+                    <textarea className="chatbox-bottom_input" placeholder="Nhập tin nhắn" value={enterMessage} onChange={messageChangeHandle} />
+                    <button disabled={!formIsValid} type="submit"><FontAwesomeIcon icon={faPaperPlane}/></button>
                 </form>
                 
             </div>

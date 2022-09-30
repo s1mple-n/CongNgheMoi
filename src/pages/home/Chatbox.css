@@ -1,3 +1,55 @@
 .ChatBox_input:focus{
     outline: none;
 }
+.chatbox_container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.chatbox_top{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.chatbox_top_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 8;
+}
+.chatbox_top_left_avt{
+    width: 50px;
+    border-radius: 50%;
+    padding: 1%;
+}
+.chatbox_top_right_favideo{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.chatbox_session{
+    width: 100%;
+    height: 82vh;
+    background-color: lightgrey;
+}
+.chatbox-bottom{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+}
+.chatbox-bottom button{
+    border: none;
+    padding-left: 10px;
+}
+.chatbox-bottom_input{
+    width: 980px;
+    margin-left:10px ;
+    border: 0;
+    resize: none;
+    
+}
+textarea:focus{
+    outline: 0;
+}
