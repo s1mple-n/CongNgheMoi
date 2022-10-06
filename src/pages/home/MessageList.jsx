@@ -2,6 +2,7 @@ import MessageItem from "./MessageItem";
 import SearchForm from "./SearchFrom";
 function MessageList(props) {
   return (
+    <>
     <div
       style={{
         width: "30%",
@@ -15,7 +16,7 @@ function MessageList(props) {
         <SearchForm />
       </div>
       <div>
-        <ul>
+        <ul style={{textDecoration:"none",listStyle:'none'}}>
           {props.items.map((messageItem) => (
             <MessageItem
               key={Math.random()}
@@ -27,6 +28,8 @@ function MessageList(props) {
         </ul>
       </div>
     </div>
+
+   </>
   );
 }
 

@@ -1,4 +1,5 @@
 import Chatbox from "./Chatbox";
+
 import MessageList from "./MessageList";
 const listms = [
     {
@@ -96,6 +97,7 @@ function ChatContainer(){
     return <div style={{ display: "flex", width: "100%" }}>
         <MessageList items={listms} />
         <Chatbox />
+        
     </div>
 }
 

@@ -21,7 +21,7 @@ function Home() {
             <button
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
               onClick={() => toggleTab(1)}
-              style={{ width: "84%", height: "50px" }}
+              style={{ width: "100%", height: "50px" }}
             >
               {" "}
               <FontAwesomeIcon icon={faMessage} />{" "}
@@ -29,7 +29,7 @@ function Home() {
           </li>
           <li>
             <button
-              style={{ width: "84%", height: "50px" }}
+              style={{ width: "100%", height: "50px", padding: "0" }}
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
               onClick={() => toggleTab(2)}
             >
