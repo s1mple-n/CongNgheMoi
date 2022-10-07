@@ -46,6 +46,7 @@
     width: 100%;
     height: 82vh;
     background-color: lightgrey;
+    overflow-y: auto;
 }
 
 .chatbox-bottom {

@@ -55,7 +55,10 @@ function Chatbox(props) {
         </div>
         {/* hiển thị các message khi chat */}
         <div className="chatbox_session">
-          <Message message={Messages} avt={Avt} hour="19:45" />
+          <Message message={Messages} hour="19:45" send="2" />
+          <Message message="hello world" hour="19:45" send="1" />
+          <Message message="hello world" hour="19:45" send="2" />
+          <Message message={Messages} hour="19:45" send="1" />
         </div>
 
         <div className="chatbox-bottom">
