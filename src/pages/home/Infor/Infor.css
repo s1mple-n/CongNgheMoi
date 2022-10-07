@@ -105,3 +105,12 @@
 .i4_trash{
     background-color: #fff;
 }
+.i4_trash button{
+    margin-top: 5%;
+}
+.icongr{
+    margin: 5%;
+}
+.gr-btn_child button{
+    background-color: #fff;
+}

@@ -1,0 +1,24 @@
+.phonebook_container{
+    width: 25%;
+    height: 100vh;
+    flex: 0 1 auto;
+    border-right: 1px solid #eeeff2;
+    overflow-y: auto;
+}
+.pb_top{
+    height: 15%;
+    border-bottom: 1px solid #eeeff2;
+}
+.btn_them{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+.icon_them{
+    width: 20px;
+    height: 20px;
+}
+ul{
+    text-decoration: none;
+    list-style: none;
+}

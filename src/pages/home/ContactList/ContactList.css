@@ -1,0 +1,16 @@
+.contactlist_container{
+    width: 25%;
+    height: 100vh;
+    flex: 0 1 auto;
+    border-right: 1px solid #eeeff2;
+    overflow-y: auto;
+}
+.ct_searchform{
+    border-bottom: 1px solid #eeeff2;
+    height: 10%;
+    align-items: center;
+}
+ul{
+    text-decoration: none;
+    list-style: none;
+}

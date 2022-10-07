@@ -1,6 +1,7 @@
 import React from "react";
-import "./MessageItem.css"
-function MessageItem(props) {
+import "./ContactItem.css";
+function ContactItem(props) {
+  // component để load 1 cuộc hội thoại
   return (
     <li className="msItems">
       <div
@@ -17,7 +18,10 @@ function MessageItem(props) {
             }}
           />
         </div>
-        <div className="a" style={{ display: "flex", flexDirection: "column",padding:"10px" }}>
+        <div
+          className="a"
+          style={{ display: "flex", flexDirection: "column", padding: "10px" }}
+        >
           <h3>{props.name}</h3>
 
           <p>{props.message}</p>
@@ -27,4 +31,4 @@ function MessageItem(props) {
   );
 }
 
-export default MessageItem;
+export default ContactItem;

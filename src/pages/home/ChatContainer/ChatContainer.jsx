@@ -1,4 +1,9 @@
-import Phonebook from "./Phonebook";
+// component chứa list message và chatbox, load dữ liệu vào mảng listms để render tạm thời
+
+import Chatbox from "../Chatbox/Chatbox";
+import ContactList from "../ContactList/ContactList";
+import Logo from "../images/avt.jpg";
+
 const listms = [
   {
     name: "nguyen van a",
@@ -91,12 +96,13 @@ const listms = [
     message: "chat r",
   },
 ];
-function PhoneBookContainer() {
+function ChatContainer() {
   return (
-    <div>
-      <Phonebook items={listms} />
+    <div style={{ display: "flex", width: "100%" }}>
+      <ContactList items={listms} />
+      <Chatbox avt={Logo} name="sirrr" />
     </div>
   );
 }
 
-export default PhoneBookContainer;
+export default ChatContainer;

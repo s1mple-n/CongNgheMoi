@@ -8,8 +8,11 @@ import { faPhone, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-// import Infor from "./Infor";
-
+import Infor from "../Infor/Infor";
+import Avt from "../images/avt.jpg";
+import Message from "../Message/Message";
+const Messages =
+  "ReactJS là thư viện JavaScript front-end phổ biến nhất trong lĩnh vực phát triển web, hay còn được gọi là React. React được tạo ra để xây dựng giao diện người dùng nhanh và tương tác cho các ứng dụng web và di động.";
 function Chatbox(props) {
   const [formIsValid, setFormIsValid] = useState(false);
   const [enterMessage, setEnterMessage] = useState();
@@ -19,46 +22,64 @@ function Chatbox(props) {
     setFormIsValid(event.target.value.trim().length > 0);
   }
   return (
-    <div className="chatbox_container">
-      <div className="chatbox_top">
-        <div className="chatbox_top_left">
-          <img
-            className="chatbox_top_left_avt"
-            src="../images/avt.jpg"
-            alt=""
-          />
-          <h3>Nguyen van A</h3>
+    // component dùng để chứa khung chat và infor
+    <div className="chatbox_infor_container">
+      <div className="chatbox_container">
+        <div className="chatbox_top">
+          <div className="chatbox_top_left">
+            {/* Load ảnh đại diện  thằng đang chat vào đây */}
+            <img className="chatbox_top_left_avt" src={props.avt} alt="" />
+            {/* Load tên thằng đang chat vào đây */}
+            <h3>{props.name}</h3>
+          </div>
+          <div className="chatbox_top_right">
+            {/* gọi thoại */}
+            <button>
+              <FontAwesomeIcon icon={faPhone} />
+            </button>
+            {/* gọi video */}
+            <button>
+              <FontAwesomeIcon
+                className="chatbox_top_right_favideo"
+                icon={faVideo}
+              />
+            </button>
+            {/* button hiển thị component Infor bên phải khi click */}
+            <button>
+              <FontAwesomeIcon
+                icon={faSquarePlus}
+                className="chatbox_top_right_fasq"
+              />
+            </button>
+          </div>
         </div>
-        <div className="chatbox_top_right">
-          <FontAwesomeIcon icon={faPhone} />
-          <FontAwesomeIcon
-            className="chatbox_top_right_favideo"
-            icon={faVideo}
+        {/* hiển thị các message khi chat */}
+        <div className="chatbox_session">
+          <Message message={Messages} avt={Avt} hour="19:45" />
+        </div>
+
+        <div className="chatbox-bottom">
+          {/* button thả icon */}
+          <button>
+            <Icon icon="fluent:sticker-add-20-regular" className="icon" />
+          </button>
+          {/* nhập tin nhắn ở đây */}
+          <textarea
+            className="chatbox-bottom_input"
+            placeholder="Nhập tin nhắn"
+            value={enterMessage}
+            onChange={messageChangeHandle}
           />
-          <FontAwesomeIcon
-            icon={faSquarePlus}
-            className="chatbox_top_right_fasq"
-          />
+          {/* button gửi ảnh nếu chưa nhập tin nhắn, chuyển thành button gửi tin nhắn khi đã nhập */}
+          <button type="submit">
+            <FontAwesomeIcon
+              icon={formIsValid ? faPaperPlane : faImage}
+              className="icon"
+            />
+          </button>
         </div>
       </div>
-      <div className="chatbox_session"></div>
-      <div className="chatbox-bottom">
-        <button>
-          <Icon icon="fluent:sticker-add-20-regular" className="icon" />
-        </button>
-        <textarea
-          className="chatbox-bottom_input"
-          placeholder="Nhập tin nhắn"
-          value={enterMessage}
-          onChange={messageChangeHandle}
-        />
-        <button type="submit">
-          <FontAwesomeIcon
-            icon={formIsValid ? faPaperPlane : faImage}
-            className="icon"
-          />
-        </button>
-      </div>
+      <Infor avt={Avt} name="a" countgr="2" />
     </div>
   );
 }

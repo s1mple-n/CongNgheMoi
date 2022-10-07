@@ -3,14 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./PhonebookItem.css";
 import { useState } from "react";
 function PhonebookItem(props) {
-  const [style, setStyle] = useState({display: 'none'});
+  // component để load 1 liên hệ trong danh bạ
+  const [style, setStyle] = useState({ display: "none" });
   return (
-    <li className="phonebook_items" onMouseEnter={e => {
-      setStyle({display: 'block'});
-  }}
-  onMouseLeave={e => {
-      setStyle({display: 'none'})
-  }}>
+    <li
+      className="phonebook_items"
+      onMouseEnter={(e) => {
+        setStyle({ display: "block" });
+      }}
+      onMouseLeave={(e) => {
+        setStyle({ display: "none" });
+      }}
+    >
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
       >
@@ -26,12 +30,11 @@ function PhonebookItem(props) {
           />
         </div>
         <div className="a" style={{ display: "flex", flexDirection: "row" }}>
-          <h3 style={{padding:'20px'}}>{props.name}</h3>
-          
-            <button className="detail" style={style}>
-              <FontAwesomeIcon icon={faEllipsis} />
-            </button>
-          
+          <h3 style={{ padding: "20px" }}>{props.name}</h3>
+
+          <button className="detail" style={style}>
+            <FontAwesomeIcon icon={faEllipsis} />
+          </button>
         </div>
       </div>
     </li>
