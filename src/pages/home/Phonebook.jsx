@@ -1,32 +1,33 @@
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PhonebookItem from "./PhonebookItem";
-import Chatbox from "./Chatbox";
+import PhonebookItem from "../home/PhonebookItem/PhonebookItem";
+import Chatbox from "../home/Chatbox/Chatbox";
 import SearchForm from "./SearchFrom";
 function Phonebook(props) {
   return (
     <div style={{ display: "flex", width: "100%" }}>
       <div
         style={{
-          width: "30%",
+          width: "25%",
           height: "100vh",
           flex: "0 1 auto",
-          borderRight: "1px solid black",
+          borderRight: "1px solid #eeeff2",
           overflowY: "auto",
-          
         }}
       >
-       <SearchForm />
-       <div style={{ borderBottom: "1px solid black",}}>
+        <div style={{ height: "15%" }}>
+          <SearchForm />
+          <div style={{ borderBottom: "1px solid #eeeff2" }}>
             <button
               style={{
-                margin:"10px"
+                margin: "1%",
               }}
             >
               <FontAwesomeIcon icon={faUserPlus} /> Them ban be bang so dien
               thoai
             </button>
           </div>
+        </div>
         <div>
           <ul>
             {props.items.map((phonebookItem) => (

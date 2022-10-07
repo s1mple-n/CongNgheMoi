@@ -1,10 +1,10 @@
-import { faMessage,faUser } from "@fortawesome/free-regular-svg-icons";
+import { faMessage, faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../images/avt.jpg";
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import "./Home.css";
-import ChatContainer from "./ChatContainer";
-import PhoneBookContainer from "./PhoneBookContainer";
+import ChatContainer from "../ChatContainer";
+import PhoneBookContainer from "../PhoneBookContainer";
 
 function Home() {
   const [toggleState, setToggleState] = useState(1);

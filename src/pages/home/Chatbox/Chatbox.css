@@ -3,10 +3,11 @@
 }
 
 .chatbox_container {
-    width: 100%;
+    width: 35%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
 }
 
 .chatbox_top {
@@ -33,7 +34,9 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-
+.chatbox_top_right_fasq{
+    padding-right: 20px;
+}
 .chatbox_session {
     width: 100%;
     height: 82vh;
@@ -51,13 +54,17 @@
 .chatbox-bottom button {
     border: none;
     padding-left: 10px;
+    flex: 0 1 auto;
+    width: 10%;
 }
 
 .chatbox-bottom_input {
-    width: 980px;
+    flex: 1 1 auto;
+    width: 80%;
     margin-left: 10px;
     border: 0;
     resize: none;
+    padding: 0%;
 }
 
 textarea:focus {
@@ -65,8 +72,8 @@ textarea:focus {
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
+    width: 40%;
+    height: 40%;
 }
 
 textarea {

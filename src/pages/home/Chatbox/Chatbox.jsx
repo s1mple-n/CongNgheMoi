@@ -1,5 +1,9 @@
 import "./Chatbox.css";
-import { faImage, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import {
+  faImage,
+  faPaperPlane,
+  faSquarePlus,
+} from "@fortawesome/free-regular-svg-icons";
 import { faPhone, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -14,7 +18,6 @@ function Chatbox(props) {
     setEnterMessage(event.target.value);
     setFormIsValid(event.target.value.trim().length > 0);
   }
-  function submitHandle() {}
   return (
     <div className="chatbox_container">
       <div className="chatbox_top">
@@ -32,27 +35,30 @@ function Chatbox(props) {
             className="chatbox_top_right_favideo"
             icon={faVideo}
           />
+          <FontAwesomeIcon
+            icon={faSquarePlus}
+            className="chatbox_top_right_fasq"
+          />
         </div>
       </div>
       <div className="chatbox_session"></div>
       <div className="chatbox-bottom">
-        <form onSubmit={submitHandle} >
-          <button>
-            <Icon icon="fluent:sticker-add-20-regular" className="icon"/>
-          </button>
-          <textarea
-            className="chatbox-bottom_input"
-            placeholder="Nhập tin nhắn"
-            value={enterMessage}
-            onChange={messageChangeHandle}
+        <button>
+          <Icon icon="fluent:sticker-add-20-regular" className="icon" />
+        </button>
+        <textarea
+          className="chatbox-bottom_input"
+          placeholder="Nhập tin nhắn"
+          value={enterMessage}
+          onChange={messageChangeHandle}
+        />
+        <button type="submit">
+          <FontAwesomeIcon
+            icon={formIsValid ? faPaperPlane : faImage}
+            className="icon"
           />
-          <button type="submit">
-            <FontAwesomeIcon icon={formIsValid ? faPaperPlane : faImage} className="icon" />
-          </button>
-        </form>
-        {/* <div></div> */}
+        </button>
       </div>
-      {/* <Infor /> */}
     </div>
   );
 }
