@@ -21,8 +21,16 @@ function Chatbox(props) {
     setEnterMessage(event.target.value);
     setFormIsValid(event.target.value.trim().length > 0);
   }
+  const [show, toggleShow] = useState(false);
+  const [btnstate, setBtnstate] = useState(false);
+  function handleClick() {
+    setBtnstate((btnstate) => !btnstate);
+    toggleShow(!show);
+  }
+  let toggleClasscheck = btnstate ? "active" : null;
   return (
     // component dùng để chứa khung chat và infor
+
     <div className="chatbox_infor_container">
       <div className="chatbox_container">
         <div className="chatbox_top">
@@ -45,10 +53,10 @@ function Chatbox(props) {
               />
             </button>
             {/* button hiển thị component Infor bên phải khi click */}
-            <button>
+            <button onClick={handleClick}>
               <FontAwesomeIcon
                 icon={faSquarePlus}
-                className="chatbox_top_right_fasq"
+                className={`chatbox_top_right_fasq ${toggleClasscheck}`}
               />
             </button>
           </div>
@@ -82,7 +90,7 @@ function Chatbox(props) {
           </button>
         </div>
       </div>
-      <Infor avt={Avt} name="a" countgr="2" />
+      {show && <Infor avt={Avt} name="a" countgr="2" />}
     </div>
   );
 }

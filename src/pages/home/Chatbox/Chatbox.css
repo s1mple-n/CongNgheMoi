@@ -36,11 +36,11 @@
 }
 
 .chatbox_top_right_favideo {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .chatbox_top_right_fasq{
-    padding-right: 20px;
+    margin-right: 20px;
 }
 .chatbox_session {
     width: 100%;
@@ -84,4 +84,7 @@ textarea:focus {
 
 textarea {
     align-items: center;
+}
+.active{
+    background-color: rgb(122, 122, 236);
 }
